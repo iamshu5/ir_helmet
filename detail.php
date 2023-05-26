@@ -10,20 +10,18 @@ include 'layout/header.php';
 ?>
 
 <section class="container mt-5 pt-5">
-<a href="./index.php" class="btn btn-warning btn-sm mb-3 text-white"><i class="fa-solid fa-arrow-left"></i></a>
-    <div class="row">
-        <div class="col-9 col-md-6 col-lg-6 col-sm-10 mt-4">
-            <!-- memanggil foto dari database lalu disimpan di folder asssets/image -->
-            <img src="assets/image/foto_produk/<?= $data_produk['foto_produk'] ?>" class="ms-5 mx-auto d-block img-fluid mt-4 rounded" width="300">
+<a href="./index.php" class="btn btn-secondary btn-sm text-white"><i class="fa-solid fa-arrow-left"></i></a>
+    <div class="row justify-content-between">
+        <div class="col-6 col-md-6 col-lg-7 col-sm-6 mt-4">
+            <img src="assets/image/foto_produk/<?= $data_produk['foto_produk'] ?>" class="mx-auto d-block img-fluid mt-4 rounded shadow" width="290">
+            <hr>
+            <p class="mt-4">Deskripsi : <?= nl2br($data_produk['deskripsi_produk']) ?></p>
         </div>
-            
-        <div class="ms-3 col-12 col-md-12 col-sm-12 col-lg-4 mt-5">
+        <div class="mx-auto col-6 col-md-4 col-sm-5 col-lg-4 mt-5">
             <!-- memanggil data nama produk  -->
             <h2 class="fw-bold"><?= $data_produk['nama_produk'] ?></h2>
             <!-- memeanggil data harga produk  -->
-            <h4>Rp. <?= number_format($data_produk['harga_produk'], 0, ',', '.') ?></h4>
-            <!-- memanggil data deskripsi produk  -->
-            <p class="mt-4"><?= nl2br($data_produk['deskripsi_produk']) ?></p>
+            <h4 class="text-success">Rp. <?= number_format($data_produk['harga_produk'], 0, ',', '.') ?></h4>
 
             <form action="tambah-keranjang.php" method="POST" class="row justify-content-end">
                 <!-- memanggil id_produk -->
